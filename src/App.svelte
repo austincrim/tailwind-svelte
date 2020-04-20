@@ -2,6 +2,7 @@
   import Tailwindcss from "./Tailwindcss.svelte";
   import ListItem from "./ListItem.svelte";
   import Form from "./Form.svelte";
+  import Header from "./Header.svelte";
 
   let items = [
     {
@@ -18,12 +19,11 @@
     }
   ];
 
-    function sortArray(a, b) {        
-        if(a.done) return 1;
-        if(b.done) return -1;
-        return 0;
-        
-    }
+  function sortArray(a, b) {
+    if (a.done) return 1;
+    if (b.done) return -1;
+    return 0;
+  }
 
   function addTodo(newTodo) {
     if (newTodo.title) {
@@ -40,8 +40,16 @@
   }
 </script>
 
+<style global>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
 <main>
   <Tailwindcss />
+  <Header />
   <div class="flex text-gray-700 font-sans justify-evenly">
     <div class="mt-2">
       <ul>
@@ -55,7 +63,7 @@
     </div>
 
     <div class="text-center mt-2">
-        <Form addHandler={addTodo}/>
+      <Form addHandler={addTodo} />
     </div>
   </div>
 </main>
