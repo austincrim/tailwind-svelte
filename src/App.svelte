@@ -20,8 +20,9 @@
     }
   ];
 
-  
-  $: percentComplete = Math.floor((items.filter(i => i.done).length / items.length) * 100)
+  $: percentComplete = Math.floor(
+    (items.filter(i => i.done).length / items.length) * 100
+  );
 
   function sortArray(a, b) {
     if (a.done) return 1;
@@ -43,7 +44,6 @@
     items[items.indexOf(todo)] = { title: todo.title, done: !todo.done };
     console.log(percentComplete);
   }
-
 </script>
 
 <style global>
@@ -56,14 +56,13 @@
 <main>
   <Tailwindcss />
   <Header />
-<<<<<<< HEAD
-  <Progress percentComplete={percentComplete} />
-  <div class="flex text-gray-700 font-sans justify-evenly">
-    <div class="mt-2">
-=======
-  <div class="flex flex-col-reverse md:flex-row max-w-full mx-auto text-gray-700 font-sans justify-evenly">
-    <div class="mt-4 px-4 w-full">
->>>>>>> aaffb028ce07461c5b57eff483d3430a32c5c797
+  <Progress {percentComplete} />
+
+  <div
+    class="flex flex-col-reverse md:flex-row mx-auto text-gray-700 font-sans
+    justify-around max-w-5xl">
+
+    <div class="mt-4 px-4 w-2/3">
       <ul>
         {#each items.sort(sortArray) as item}
           <ListItem
@@ -77,5 +76,6 @@
     <div class="text-center mt-4 w-full">
       <Form addHandler={addTodo} />
     </div>
+
   </div>
 </main>
