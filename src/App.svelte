@@ -3,6 +3,7 @@
   import ListItem from "./ListItem.svelte";
   import Form from "./Form.svelte";
   import Header from "./Header.svelte";
+  import Progress from "./Progress.svelte";
 
   let items = [
     {
@@ -18,6 +19,9 @@
       done: false
     }
   ];
+
+  
+  $: percentComplete = Math.floor((items.filter(i => i.done).length / items.length) * 100)
 
   function sortArray(a, b) {
     if (a.done) return 1;
@@ -37,7 +41,9 @@
 
   function checkTodo(todo) {
     items[items.indexOf(todo)] = { title: todo.title, done: !todo.done };
+    console.log(percentComplete);
   }
+
 </script>
 
 <style global>
@@ -50,6 +56,7 @@
 <main>
   <Tailwindcss />
   <Header />
+  <Progress percentComplete={percentComplete} />
   <div class="flex text-gray-700 font-sans justify-evenly">
     <div class="mt-2">
       <ul>
