@@ -1,5 +1,5 @@
 <script>
-  import Tailwindcss from "./Tailwindcss.svelte";
+  import Tailwindcss from './Tailwindcss.svelte';
   import ListItem from "./ListItem.svelte";
   import Form from "./Form.svelte";
   import Header from "./Header.svelte";
@@ -48,6 +48,7 @@
 
 <style global>
   body {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
@@ -60,9 +61,9 @@
 
   <div
     class="flex flex-col-reverse md:flex-row mx-auto text-gray-700 font-sans
-    justify-around max-w-5xl">
+    justify-evenly max-w-6xl">
 
-    <div class="mt-4 px-4 w-2/3">
+    <div class="px-4 w-full">
       <ul>
         {#each items.sort(sortArray) as item}
           <ListItem
@@ -73,7 +74,7 @@
       </ul>
     </div>
 
-    <div class="text-center mt-4 w-full">
+    <div class="mb-4 px-4 w-full text-center md:text-left">
       <Form addHandler={addTodo} />
     </div>
 
