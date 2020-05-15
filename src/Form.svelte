@@ -1,11 +1,12 @@
 <script>
+  import uid from 'uid';
   export let addHandler;
   let newTitle = "";
 </script>
 
 <style>
   button:active {
-    @apply bg-indigo-700;
+    @apply bg-orange-700;
   }
 </style>
 
@@ -19,11 +20,11 @@
     type="text" />
   <button
     on:click={() => {
-      addHandler({ title: newTitle, done: false });
+      addHandler({ title: newTitle, done: false, id: uid() });
       newTitle = '';
     }}
-    class="py-1 px-6 text-white font-semibold rounded bg-indigo-500
-    hover:bg-indigo-400">
+    class="py-1 px-6 text-white font-semibold rounded bg-orange-400
+    hover:bg-orange-500">
     Add item
   </button>
 </div>

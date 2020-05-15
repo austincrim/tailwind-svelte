@@ -4,19 +4,23 @@
   import Form from "./Form.svelte";
   import Header from "./Header.svelte";
   import Progress from "./Progress.svelte";
+  import uid from 'uid';
 
   let items = [
     {
       title: "Get groceries",
-      done: false
+      done: false,
+      id: uid()
     },
     {
       title: "Do laundry",
-      done: false
+      done: false,
+      id: uid()
     },
     {
       title: "Finish homework",
-      done: false
+      done: false,
+      id: uid()
     }
   ];
 
@@ -36,8 +40,8 @@
     }
   }
 
-  function removeTodo(title) {
-    items = items.filter(item => item.title != title);
+  function removeTodo(id) {
+    items = items.filter(item => item.id != id);
   }
 
   function checkTodo(todo) {
@@ -60,7 +64,7 @@
   <Progress {percentComplete} />
 
   <div
-    class="flex flex-col-reverse md:flex-row mx-auto text-gray-700 font-sans
+    class="flex flex-col-reverse md:flex-row mx-auto p-8 text-gray-700 bg-gray-300 rounded shadow font-sans
     justify-evenly max-w-6xl">
 
     <div class="px-4 w-full">

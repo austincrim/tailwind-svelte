@@ -21,6 +21,7 @@
     "tailwindcss": "^1.2.0"
   },
   "dependencies": {
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^0.4.4",
+    "uid": "^1.0.0"
   }
 }

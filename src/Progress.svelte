@@ -17,7 +17,7 @@
       @apply bg-orange-300;
     }
     50% {
-      @apply bg-indigo-500;
+      @apply bg-blue-700;
       transform: scale(1.1);
     }
     100% {

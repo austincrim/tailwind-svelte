@@ -24,7 +24,7 @@
 
 <li
   class="flex justify-between mb-4 px-4 py-3 font-semibold bg-gray-200 rounded
-  border-b border-indigo-500 shadow">
+  border-b-2 border-blue-600 shadow">
   <div class={`${todo.done ? 'done' : ''}`}>{todo.title}</div>
 
   <div>
@@ -34,7 +34,7 @@
       &#10004;
     </button>
     <button
-      on:click={() => removeHandler(todo.title)}
+      on:click={() => removeHandler(todo.id)}
       class="border-none rounded px-1 ml-1">
       &#10006;
     </button>
