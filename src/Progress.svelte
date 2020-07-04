@@ -17,7 +17,7 @@
       @apply bg-orange-300;
     }
     50% {
-      @apply bg-blue-700;
+      @apply bg-green-500;
       transform: scale(1.1);
     }
     100% {
@@ -30,5 +30,5 @@
 <div class="w-2/3 mx-auto mb-10">
   <div
     style={`width: ${percentComplete}%`}
-    class={`h-4 rounded-lg bg-orange-300 progress-bar ${percentComplete == 100 ? 'complete' : ''}`} />
+    class={`h-4 rounded bg-orange-300 progress-bar ${percentComplete == 100 ? 'complete' : ''}`} />
 </div>
