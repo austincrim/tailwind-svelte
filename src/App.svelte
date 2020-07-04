@@ -46,12 +46,11 @@
 
   function checkTodo(todo) {
     items[items.indexOf(todo)] = { title: todo.title, done: !todo.done };
-    console.log(percentComplete);
   }
 </script>
 
 <style global>
-  body {
+  main {
     box-sizing: border-box;
     margin: 0;
     padding: 0;

@@ -25,7 +25,7 @@
 <li
   class="flex justify-between mb-4 px-4 py-3 font-semibold bg-gray-200 rounded
   border-b-2 border-blue-600 shadow">
-  <div class={`${todo.done ? 'done' : ''}`}>{todo.title}</div>
+  <div class:done="{todo.done}">{todo.title}</div>
 
   <div>
     <button
