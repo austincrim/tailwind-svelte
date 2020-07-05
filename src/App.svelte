@@ -84,8 +84,8 @@
         </div>
 
         <div
-            class="flex flex-col justify-start mb-4 px-4 w-full text-center
-            md:text-left">
+            class="flex flex-col mb-4 justify-start px-4 w-full md:text-left"
+        >
             <Form addHandler={addTodo} />
             <button
                 class="py-1 px-6 mt-4 text-orange-800 font-semibold rounded
